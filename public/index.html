@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Index</title>
+      <link type="text/css" media="all" href="assets/style.css" rel="stylesheet" />
+   </head>
+   <body>
+    <div id="form-div">
+      <div class="container">
+        <h2>Please fill in this form to create an account.</h2>
+        <hr>
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="name" name="name" required onkeyup="myFunction()" placeholder="Your name..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Age</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="age" name="age" required onkeyup="myFunction()" placeholder="Your Age..">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Gender</label>
+            </div>
+            <div class="col-75">
+              <input type="radio" id="gender" name="gender" value="Male" onClick="myFunction()" checked>Male
+              <input type="radio" id="gender" name="gender" value="Female" onClick="myFunction()">Female
+            </div>
+          </div>
+          <div class="row">
+            <button type="button" value="Next" id="submit" class="btn btn-success" onClick="next(1)">Create Profile and Start Exploring</button>
+          </div>
+      </div>
+    </div>
+
+    <div id="slider-div" style="display:none">
+      <div class="slideshow-container">
+         <div class="mySlides fade" id="Profile 1">
+            <img src="https://images.unsplash.com/photo-1557296387-5358ad7997bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=60" height="100px;" width="100px;"></br>
+            Profile 1 </br>
+            Name :  Linnea </br>
+            Gender : Female </br>
+            Age : 25 </br>
+         </div>
+         <div class="mySlides fade" id="Profile 2">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" height="100px;" width="100px;"></br>
+            Profile 2 </br>
+            Name :  Lin </br>
+            Gender : Male </br>
+            Age : 27 </br>
+         </div>
+         <div class="mySlides fade" id="Profile 3">
+            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=60 100w" height="100px;" width="100px;"></br>
+            Profile 3 </br>
+            Name :  Penelope </br>
+            Gender : Female </br>
+            Age : 26 </br>
+         </div>
+         <div class="mySlides fade" id="Profile 4">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=100&amp;q=60%20100w" height="100px;" width="100px;"></br>
+            Profile 4 </br>
+            Name :  Amara </br>
+            Gender : Female </br>
+            Age : 22 </br>
+         </div>
+         <div class="mySlides fade" id="Profile 5">
+            <img src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=60 100w" height="100px;" width="100px;"></br>
+            Profile 5 </br>
+            Name :  John </br>
+            Gender : Male </br>
+            Age : 27 </br>
+         </div>
+         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+         <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      <div style="text-align:center">
+         <!-- <span class="dot" onclick="currentSlide(1)">1</span> 
+            <span class="dot" onclick="currentSlide(2)">2</span> 
+            <span class="dot" onclick="currentSlide(3)">3</span> 
+            <span class="dot" onclick="currentSlide(4)">4</span>
+            <span class="dot" onclick="currentSlide(5)">5</span> -->
+      </div>
+      <div class="button" style="text-align:center">
+         <button value="Like" type="button" data-attr = "Profile 1" onClick = "like()" id = "like">Like</button>
+         <button value="Dislike" type="button" data-attr = "Profile 1" onClick = "dislike()" id = "dislike">Dislike</button><br/><br/>
+         <button type="button" value="Next" id="submit" onClick="next(2)">Submit</button>
+
+         <input type="hidden" id="slider1_hidden" name="" value="">
+         <input type="hidden" id="slider2_hidden" name="" value="">
+         <input type="hidden" id="slider3_hidden" name="" value="">
+         <input type="hidden" id="slider4_hidden" name="" value="">
+         <input type="hidden" id="slider5_hidden" name="" value="">
+      </div>
+      <div id="content-total" style="text-align:center"></div>
+    </div>
+
+    <div id="profile-div" style="display:none">
+      <div class="container">
+        <div class="profile">
+          <h2>Your Profile</h2><hr>
+          <div class="a"><b>Name:</b> <span class="show-name" id="show-name"></span></div>
+          <div class="a"><b>Age:</b> <span class="show-age" id="show-age"></span></div>
+          <div class="a"><b>Gender:</b> <span class="show-gender" id="show-gender"></span></div>
+        </div>
+        <p>Your profile is matched with the following profile(s):</p>
+         <div id="content-profile-result"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="assets/main.js"></script>
+    <script>
+      function myFunction() {
+        name = document.getElementById("name").value;
+        document.getElementById("show-name").innerHTML = name;
+
+        age= document.getElementById("age").value;
+        document.getElementById("show-age").innerHTML = age;
+
+        gender= document.querySelector('input[name="gender"]:checked').value;
+        document.getElementById("show-gender").innerHTML = gender;
+      }
+
+      function next(step) {
+        if(step==1){
+          name = document.getElementById("name").value;
+          age= document.getElementById("age").value;
+          // gender= document.querySelector('input[name="gender"]:checked').value;
+          if(name=="" || age==""){
+            alert("All fields are required");
+            return false;
+          }
+          document.getElementById("form-div").style.display = "none";
+          document.getElementById("slider-div").style.display = "block";
+        }else if(step==2){
+          document.getElementById("form-div").style.display = "none";
+          document.getElementById("slider-div").style.display = "none";
+          document.getElementById("profile-div").style.display = "block";
+        }else{
+          document.getElementById("form-div").style.display = "none";
+          document.getElementById("slider-div").style.display = "none";
+          document.getElementById("profile-div").style.display = "block";
+        }
+      }
+    </script>
+   </body>
+</html>
