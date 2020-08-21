@@ -5,6 +5,7 @@ display: none;
 padding-top: 50px;
 color: #fff;
 }
+
 img {vertical-align: middle;}
 
 /* Slideshow container */
@@ -174,3 +175,4 @@ input[type=submit] {
     margin-top: 0;
   }
 }
+

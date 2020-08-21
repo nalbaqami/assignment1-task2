@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 
-// define static folder
+
+
 app.use(express.static('public'));
 
 

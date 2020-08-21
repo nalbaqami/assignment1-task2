@@ -1,5 +1,4 @@
 
-
 function plusSlides(n) {
   showSlides(slideIndex += n);
   var id = document.querySelector('.mySlides.active').id;
